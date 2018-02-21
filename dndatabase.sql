@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2018 at 06:04 AM
+-- Generation Time: Feb 21, 2018 at 03:31 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `CategoryID` int(11) NOT NULL,
+  `categoryID` int(11) NOT NULL,
   `categoryName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`CategoryID`, `categoryName`) VALUES
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
 (1, 'Figurines'),
 (2, 'Books'),
 (3, 'Dice');
@@ -49,17 +49,17 @@ INSERT INTO `categories` (`CategoryID`, `categoryName`) VALUES
 --
 
 CREATE TABLE `products` (
-  `ProductID` int(11) NOT NULL,
-  `CategoryID` int(11) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Price` float(8,2) NOT NULL
+  `productID` int(11) NOT NULL,
+  `categoryID` int(11) NOT NULL,
+  `productName` varchar(255) NOT NULL,
+  `listPrice` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ProductID`, `CategoryID`, `Name`, `Price`) VALUES
+INSERT INTO `products` (`productID`, `categoryID`, `productName`, `listPrice`) VALUES
 (1, 1, 'Human Fighter', 15.99),
 (2, 1, 'Elf Mage', 16.99),
 (3, 1, 'Dwarf Paladin', 14.99),
@@ -82,13 +82,13 @@ INSERT INTO `products` (`ProductID`, `CategoryID`, `Name`, `Price`) VALUES
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`CategoryID`);
+  ADD PRIMARY KEY (`categoryID`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`ProductID`);
+  ADD PRIMARY KEY (`productID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -98,13 +98,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
